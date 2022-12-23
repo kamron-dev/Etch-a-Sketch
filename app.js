@@ -12,6 +12,9 @@ const createDivs = (amount) => {
             const grid = document.createElement('div')
             grid.classList.add('divElRow')
             row.appendChild(grid)
+            grid.addEventListener('mouseover', () => {
+                grid.classList.add('divElDrawn')
+            })
         }
         containerEl.appendChild(row)
     }
