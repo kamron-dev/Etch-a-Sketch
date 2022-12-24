@@ -1,33 +1,42 @@
 const containerEl = document.querySelector("#container")
 const buttonEl = document.querySelector(".elementsBtn")
+const clearBtn = document.querySelector(".clearBtn")
 
-// Function that takes a number as an argument and creates a grid of divs
-const createDivs = (amount) => {
-    for (let i = 0; i < amount; i++) {
-        const row = document.createElement('div')
-        // row.classList.add('divEl') Creates extra row of divs
-        
+/* Function that takes number and creates div grid with that number on each side 
+and fits all divs by adding gridTemplateCols and gridTemplateRows to the parent containerEl */ 
 
-        for (let j = 0; j < amount; j++) {
-            const grid = document.createElement('div')
-            grid.classList.add('divElRow')
-            row.appendChild(grid)
-            grid.addEventListener('mouseover', () => {
-                grid.classList.add('divElDrawn')
-            })
-        }
-        containerEl.appendChild(row)
+const createDivs = (number) => {
+    containerEl.style.gridTemplateColumns = `repeat(${number}, 1fr)`;
+    containerEl.style.gridTemplateRows = `repeat(${number}, 1fr)`;
+
+    for (let i = 1; i <= number * number; i++) {
+        let newDivs = document.createElement('div')
+        newDivs.classList.add('divEl')
+        containerEl.appendChild(newDivs)
+        newDivs.addEventListener('mouseover', (event) => {
+            event.target.style.backgroundColor = "black";
+        })
     }
 }
 
 createDivs(16)
 
 buttonEl.addEventListener('click', () => {
-    //Clear out the divs created on page load ( line 23)
+    //Clear out the divs created on page load ( line 22)
     containerEl.innerHTML = ''
     // Prompt for a new divs amount 
     let newNum = prompt('Enter a number! (No more than 100)')
     if (newNum > 100) newNum = 100; 
     if (newNum < 1) newNum = 2;
     createDivs(newNum)
+});
+
+// Creating a button to clear out the grid DON'T FORGET TO PUT THE DOT (.) IN FRONT OF CLASS SELECTORS
+clearBtn.addEventListener('click', () => {
+    let allNodes = document.querySelectorAll('.divEl')
+    allNodes.forEach(node => {
+        node.style.backgroundColor = "white"
+    });
+    
 })
+
