@@ -1,8 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
 #container {
-background-color: aqua;  
+background-color: white;  
 border: 5px solid black;  
 height: 960px;
-margin-top: auto;
+width: 960px;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -14,7 +25,7 @@ justify-content: center;
     width: 25px;
     height: 25px;
     margin: 2px;
-    border: 5px solid green;
+    border: 5px solid blue;
     
 }
 
@@ -27,3 +38,14 @@ justify-content: center;
     
 }
 
+.buttonDiv {
+ display: inline-block;  
+
+ border: 2px solid green;
+ width: 130px; 
+ height: 130px;
+}
+
+button {
+    
+}
