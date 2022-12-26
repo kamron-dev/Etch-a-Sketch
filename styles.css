@@ -1,7 +1,9 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
     min-height: 100vh;
     height: 100vh;
     background-color: red;
@@ -9,8 +11,7 @@ body {
 
 #container {
 background-color: white; 
-border-radius: 25px; 
-border: 5px solid black;  
+ border: 5px solid black;  
 display: grid;
 height: 70%;
 width: 70%;
@@ -25,13 +26,19 @@ width: 70%;
 }
 
 .buttonDiv {
- display: inline-block;  
-
- border: 2px solid green;
- width: 130px; 
- height: 130px;
+  margin-bottom: 45px;
+  font-size: 25px;
+  width: 85px;
+  
+ 
 }
 
 header {
     display: flex;
+    flex-direction: column-reverse;
+}
+
+h1 {
+    color: white;
+    font-size: 65px;
 }

@@ -1,6 +1,13 @@
 const containerEl = document.querySelector("#container")
 const buttonEl = document.querySelector(".elementsBtn")
 const clearBtn = document.querySelector(".clearBtn")
+const rainbowBtn = document.querySelector(".rainbowBtn")
+
+// const randomR = Math.floor(Math.random() * 255 + 1);
+// const randomG = Math.floor(Math.random() * 255 + 1);
+// const randomB = Math.floor(Math.random() * 255 + 1);
+
+
 
 /* Function that takes number and creates div grid with that number on each side 
 and fits all divs by adding gridTemplateCols and gridTemplateRows to the parent containerEl */ 
@@ -8,6 +15,7 @@ and fits all divs by adding gridTemplateCols and gridTemplateRows to the parent 
 const createDivs = (number) => {
     containerEl.style.gridTemplateColumns = `repeat(${number}, 1fr)`;
     containerEl.style.gridTemplateRows = `repeat(${number}, 1fr)`;
+        
 
     for (let i = 1; i <= number * number; i++) {
         let newDivs = document.createElement('div')
@@ -18,6 +26,30 @@ const createDivs = (number) => {
         })
     }
 }
+
+rainbowBtn.onclick = () => {
+    let allNodes = document.querySelectorAll('.divEl')
+    allNodes.forEach(node => {
+        node.style.backgroundColor = "white"
+    })
+    allNodes.forEach(node => {
+        node.addEventListener('mouseover', () => {
+            node.style.backgroundColor = randomColor()
+        })
+    })
+    
+
+}
+
+const randomColor = () => {
+    const randomR = Math.floor(Math.random() * 255 + 1);
+    const randomG = Math.floor(Math.random() * 255 + 1);
+    const randomB = Math.floor(Math.random() * 255 + 1);
+
+    return `rgb(${randomR} ${randomG} ${randomB})`
+}
+
+
 
 createDivs(16)
 
