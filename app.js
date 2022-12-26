@@ -3,9 +3,7 @@ const buttonEl = document.querySelector(".elementsBtn")
 const clearBtn = document.querySelector(".clearBtn")
 const rainbowBtn = document.querySelector(".rainbowBtn")
 
-// const randomR = Math.floor(Math.random() * 255 + 1);
-// const randomG = Math.floor(Math.random() * 255 + 1);
-// const randomB = Math.floor(Math.random() * 255 + 1);
+
 
 
 
